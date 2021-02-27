@@ -1,0 +1,43 @@
+<div class="main posts-show">
+<div class="container">
+<div class="info">
+<h2>スケジュール詳細</h2>
+    <div class = form-error>
+<% @users.errors.full_messages.each do |message| %>
+<%= message %>
+<%end%>
+</div>
+</div>
+    <table>
+    <tr>
+    <th>タイトル</th>
+    <td><%= @users.title %></td>
+    </tr>
+    <tr>
+    <th>開始日</th>
+    <td><%= @users.start%></td>
+    </tr>
+    <tr>
+    <th>終了日</th>
+    <td><%= @users.end%></td>
+    </tr>
+    <tr>
+    <th>終日</th>
+    <% if @users.allday == true %>
+    <td class="maru">◯</td>
+    <% else @users.allday == false%>
+    <td></td>
+    <%end%>
+    </tr>
+    <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @users.memo %></td>
+    </tr>
+    </table>
+    <ul>
+    <li><%= link_to("スケジュール一覧に戻る","/posts/index") %></li>
+    <li><%= link_to("スケジュールを編集する","/posts/#{@users.id}/edit") %></li>
+    <li><%= link_to("スケジュールを削除する","/posts/#{@users.id}/destroy",{method: "post"}) %></li>
+</ul>
+</div>
+</div>

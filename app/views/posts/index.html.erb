@@ -1,0 +1,43 @@
+<div class="main-container">
+<div class="info">
+<h2>スケジュール一覧</h2>
+</div>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>タイトル</th>
+<th>開始日</th>
+<th>終了日</th>
+<th>終日</th>
+<th>スケジュール更新日</th>
+<th>確認</th>
+<th>編集</th>
+<th>削除</th>
+</tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+<tr>
+<td><%= user.id %></td>
+<td><%= user.title %></td>
+<td><%= user.start %></td>
+<td><%= user.end %></td>
+<% if user.allday == true %>
+<td class= "maru">◯</td>
+<% else user.allday == false %>
+<td></td>
+<%end%>
+<td><%= user.updated_at.to_s(:datetime_jp) %></td>
+<td><%=link_to("確認","/posts/#{user.id}")%></td>
+<td><%=link_to("編集","/posts/#{user.id}/edit")%></td>
+<td><%=link_to("削除","/posts/#{user.id}/destroy",{method: "post"})%></td>
+<% user.memo %>
+</tr>
+</tbody>
+<% end %>
+</table>
+<ul>
+<li><%=link_to("スケジュール新規登録","/posts/new")%></li>
+</ul>
+</div>

@@ -1,0 +1,52 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+    margin-top:0px;
+}
+table {
+    border-collapse: collapse;
+}
+table td{
+    background-color:#f1c8c861;
+}
+table th{
+    background-color: #ffdfdf;
+}
+table th, table td {
+    border: solid 1px black;
+    padding: 10px 20px;
+}
+input{
+    width:100%;
+}
+input[type="submit"]{
+    width:auto;
+}
+ul{
+    list-style: none;
+    padding-left:0px;
+}
+textarea{
+    width:100%;
+}
+.maru{
+    text-align: center;
+}
+h1{
+    
+    display: block;
+    font-weight: bold;
+    color:white;
+}
+header,footer{ 
+    padding:10px;
+    background-color:#c52f24;
+    width:max;
+}
+.main-container{
+    margin:50px 5px;
+}
+li{
+    padding:5px;
+}

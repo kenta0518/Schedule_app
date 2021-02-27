@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScheduleApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+  <h1>スケジュール管理アプリ</h1>
+  </header>
+  <% if flash[:notice]%>
+      <div class="flash">
+      <%=flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+    <footer>
+    <h1>現在の日時 ：<%=Time.now.to_s(:datetime_jp)%></h1>
+    </footer>
+  </body>
+</html>

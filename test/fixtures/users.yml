@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  start: 2021-02-23
+  end: 2021-02-23
+  allday: false
+  check: MyString
+  edited: MyString
+  erase: MyString
+
+two:
+  title: MyText
+  start: 2021-02-23
+  end: 2021-02-23
+  allday: false
+  check: MyString
+  edited: MyString
+  erase: MyString

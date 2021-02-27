@@ -1,0 +1,57 @@
+<div class="main posts-show">
+<div class="container">
+<div class="info">
+<h2>スケジュール新規投稿</h2>
+    <div class = form-error>
+<% @users.errors.full_messages.each do |message| %>
+<%= message %>
+<%end%>
+</div>
+</div>
+    <%= form_with medel:@users, url:{controller:'posts',action:'update'} do |f| %>
+<table>
+<tr>
+<th><%= f.label :title ,"タイトル" %></th>
+<td><%= f.text_field :title,value:@users.title %></td>
+</tr>
+
+<tr>
+<th><%= f.label :start ,"開始日" %></th>
+<td><%= f.date_field :start,value:@users.start %></td>
+</tr>
+
+<tr>
+<th><%= f.label :end ,"終了日" %></th>
+<td><%= f.date_field :end,value:@users.end %></td>
+</tr>
+
+<tr>
+<th><%= f.label :allday,"終日" %></th>
+<%#<td><%= f.check_box :allday,{:checked=>true}%>
+
+<% if @users.allday == true %>
+
+<td><%= f.check_box :allday,{:checked=>true}%></td>
+<% else @users.allday == false %>
+<td><%= f.check_box :allday,{:checked=>false}%></td>
+
+<%end%>
+
+
+
+</td>
+</tr>
+<tr>
+<th><%= f.label :memo,"スケジュールメモ" %></th>
+<td><%= f.text_area :memo,value:@users.memo %></td>
+</tr>
+</table>
+<ul>
+<li><%= f.submit "編集を完了する" %></li> 
+<li><%= link_to("スケジュール一覧に戻る","/posts/index")%></li>
+</ul>
+<% end %>
+
+
+</div>
+</div>
